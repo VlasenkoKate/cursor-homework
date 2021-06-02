@@ -53,15 +53,15 @@ console.log(netProfit);
 
 // Advanced
 // Створіть шаблонний рядок та виведіть всі обчислення вчинені в Base частині домашнього завдання у вигляді одного рядка
-document.writeln(`1. Максимальна ціна: ${maxPrice}; <br> 
-2. Мінімальна ціна: ${minPrice}; <br> 
-3. Сума вартостей всіх товарів: ${sumOfPrices}; <br> 
-4. Вартість всіх товарів без копійок: ${integerSumOfPrices}; <br>
-5. Сума товарів округлена до сотен: ${roundToHundredsSum}; <br> 
-6. Чи є сума парним числом? ${isEven}; <br>
-7. Решта с 500: ${changeFromPurchase}; <br>
-8. Середнє значення цін: ${meanPrice}; <br>
-9. Розмір знижки: ${discountAmount}; <br>
-10. Сума знижки: ${discountSum}; <br>
-11. Сума до оплати: ${amountToPay}; <br>
-12. Чистий прибуток: ${netProfit}. `)
+document.writeln(`1. Максимальна ціна:  ${maxPrice}; <br> 
+2. Мінімальна ціна:  ${minPrice}; <br> 
+3. Сума вартостей всіх товарів:  ${sumOfPrices}; <br> 
+4. Вартість всіх товарів без копійок:  ${integerSumOfPrices}; <br>
+5. Сума товарів округлена до сотен:  ${roundToHundredsSum}; <br> 
+6. Чи є сума парним числом?  ${isEven === 0}; <br>
+7. Решта с 500:  ${changeFromPurchase}; <br>
+8. Середнє значення цін:  ${meanPrice}; <br>
+9. Розмір знижки:  ${discountAmount}%; <br>
+10. Сума знижки:  ${discountSum}; <br>
+11. Сума до оплати:  ${amountToPay}; <br>
+12. Чистий прибуток:  ${netProfit}. `)
