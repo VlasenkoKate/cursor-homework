@@ -1,28 +1,29 @@
 // Отримайте у користувача число(N) від якого ми будемо складати. 
-let firstNumber = +prompt("Введите первое число");
+let firstNumber = prompt("Введите первое число");
 
 // Перевірте, чи є передане значення N ЦІЛИМ числом.
-while (!firstNumber) {
-    firstNumber = +prompt("Это не число. Введите число!");
+while (firstNumber.trim() == "" || isNaN(+firstNumber)) {
+    firstNumber = prompt("Это не число. Введите число!");
 }
 
-if (!Number.isInteger(firstNumber)) {
-    firstNumber = Math.trunc(firstNumber);
+if (!Number.isInteger(+firstNumber)) {
+    firstNumber = Math.round(firstNumber);
+    alert(`Вы ввели дробное число. Оно округлено до ${firstNumber}`);
 }
-console.log(firstNumber);
+
 
 // Отримайте у користувача число(M) до якого ми будемо складати (включно).
-let secondNumber = +prompt("Введите второе число");
+let secondNumber = prompt("Введите второе число");
 
 // Перевірте, чи є передане значення M ЦІЛИМ числом.
-while (!secondNumber) {
-    secondNumber = +prompt("Это не число. Введите число!");
+while (secondNumber.trim() == "" || isNaN(+secondNumber)) {
+    secondNumber = prompt("Это не число. Введите число!");
 }
 
-if (!Number.isInteger(secondNumber)) {
-    secondNumber = Math.trunc(secondNumber);
+if (!Number.isInteger(+secondNumber)) {
+    secondNumber = Math.round(secondNumber);
+    alert(`Вы ввели дробное число. Оно округлено до ${secondNumber}`);
 }
-console.log(secondNumber);
 
 // Отримайте у користувача булевий параметр(true/false), який підкаже нам чи потрібно пропускати парні числа.
 const skipEven = confirm("Пропускать парные числа?");
