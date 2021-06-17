@@ -36,12 +36,13 @@
 
  // 4. Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати
  const calculateTax = (income) => {
+     const tax = 0.195
      if (typeof income !== "number") { // проверяем, чтобы введенный доход был числом
          return `This is not a number! Enter the number`
      } else if (income <= 0) { // делаем проверку на отрицательный и нулевой доход
          return `You don't have income. Tax = 0`
      } else {
-         return income - (income * 0.18 + income * 0.015); // считаем доход с вычетом налога
+         return income - (income * tax); // считаем доход с вычетом налога
      }
  }
 
@@ -100,7 +101,7 @@
      let valueArr = value.toLowerCase().split(''); //переводим введенное слово в нижний регистр и в массив
      let cleanValueArr = valueArr.filter(x => x !== " "); // удаляем из массива пробелы, чтобы не мешали проверять предложения
      let reverseArr = cleanValueArr.slice().reverse(); // делаем реверсию массива, чтобы потом сравнить с исходным
-     for (var i = 0; i < cleanValueArr.length; i++) { // сравниваем элементы массива посимвольно
+     for (let i = 0; i < cleanValueArr.length; i++) { // сравниваем элементы массива посимвольно
          if (cleanValueArr[i] !== reverseArr[i]) // если какой-то символ не совпадает выводим false
              return false;
      }
