@@ -4,7 +4,7 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
 // 1. Створіть функцію яка рахує скільки податків ви заплатите як IT-спеціаліст в якійсь з країн
 
-const getMyTaxes = function(country, salary) {
+const getMyTaxes = function(salary) {
     return salary * this.tax;
 }
 const userTaxes = getMyTaxes.call(ukraine, 3000)
@@ -33,11 +33,11 @@ const getMySalary = function(country) {
         const maxSalary = 2000
         const minSalary = 1500
         const userSalary = Math.round(Math.random() * (maxSalary - minSalary) + minSalary);
-        const userTaxes = userSalary * this.tax;
-        const userProfit = userSalary - userTaxes;
+        const userTax = userSalary * this.tax;
+        const userProfit = userSalary - userTax;
         const userSalaryInfo = {
             salary: userSalary,
-            taxes: userTaxes,
+            taxes: userTax,
             profit: userProfit
         }
         console.log(userSalaryInfo)
