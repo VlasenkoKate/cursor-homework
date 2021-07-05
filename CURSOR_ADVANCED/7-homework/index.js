@@ -23,7 +23,7 @@ const getTotalTaxes = function(country) {
     return this.tax * this.middleSalary * this.vacancies
 }
 const totaltaxes = getTotalTaxes.call(ukraine);
-console.log(`Сумма налогов с IT-специалистов: ${totaltaxes}`)
+console.log(`Общая сумма налогов с IT-специалистов: ${totaltaxes}`)
 
 // 4. Створіть функцію яка буде писати в консоль об'єкт виду: { salary: number, taxes: number, profit: number } кожні 10 секунд. 
 // Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. 
