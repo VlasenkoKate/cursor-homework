@@ -26,20 +26,20 @@ const students = [{
 
 // 1. Створіть функцію, яка повертає список предметів для конкретного студента. 
 const getSubjects = function(student) {
-    if (student < students.length) { //проверка на наличие студента с индексом равным переданному в функцию числу
-        return Object.keys(students[student].subjects) //получаем названия предметов
+    if (student) { //проверка на наличие студента с индексом равным переданному в функцию числу
+        return Object.keys(student.subjects) //получаем названия предметов
             .map(subject => {
                 return (subject.charAt(0).toUpperCase() + subject.slice(1).toLowerCase()) //переводим первую букву в заглавную
                     .replace("_", " "); //меняем подчеркивания на пробел
             })
     } else console.log("Такого студента нет в списке")
 }
-console.log(`Предметы студента: ${getSubjects(0)}`)
+console.log(`Предметы студента: ${getSubjects(students[0])}`)
 
 // 2. Створіть функцію, яка поверне середню оцінку по усім предметам для переданого студента
 const getAverageMark = function(student) {
-    if (student < students.length) { //проверка на наличие студента с индексом равным переданному в функцию числу
-        const studentMarks = Object.values(students[student].subjects) // получается массив с массивами оценок по предметам
+    if (student) { //проверка на наличие студента с индексом равным переданному в функцию числу
+        const studentMarks = Object.values(student.subjects) // получается массив с массивами оценок по предметам
             .join(',') //преобразуем массивы в строку 
             .split(",") //преобразуем строку в единый массив с оценками
         const sumOfMarks = studentMarks.reduce((sumOfMarks, mark) => { //считаем сумму оценок
@@ -49,34 +49,32 @@ const getAverageMark = function(student) {
         return (sumOfMarks / studentMarks.length).toFixed(2) //считаем среднюю оценку
     } else alert("Такого студента нет в списке")
 }
-console.log(`Средняя оценка студента: ${getAverageMark(0)}`)
+console.log(`Средняя оценка студента: ${getAverageMark(students[0])}`)
 
 // 3. Створіть функцію, яка повертає інформацію загального виду по переданому студенту 
 const getStudentInfo = function(student) {
-    if (student < students.length) { //проверка на наличие студента с индексом равным переданному в функцию числу
+    if (student) { //проверка на наличие студента с индексом равным переданному в функцию числу
         const studentInfo = { //создаем объект в который записываем данные по студенту
-            name: students[student].name, // получаем имя
-            course: students[student].course, // получаем номер курса
+            name: student.name, // получаем имя
+            course: student.course, // получаем номер курса
             averageMark: getAverageMark(student) //средняя оценка с предыдущего задания
         }
         console.log(`Инфо студента: name: ${studentInfo.name}, course: ${studentInfo.course}, avarageMark: ${studentInfo.averageMark}`)
     } else alert("Такого студента нет в списке")
 }
-getStudentInfo(0)
+getStudentInfo(students[0])
 
 // 4. Створіть функцію, яка повертає імена студентів у алфавітному порядку.
 const getStudentsNames = function(students) {
-    const studentsNames = students.map(student => {
-        return student.name //получаем массив из имен студентов
-    })
-    return studentsNames.sort() // сортируем имена по алфавиту
+    return students.map(student => student.name).sort() //получаем массив из имен студентов и сортируем имена по алфавиту
+
 }
 console.log(`Отсортированные имена студентов: ${getStudentsNames(students)}`)
 
 // 5. Створіть функцію яка повертає кращого студента зі списку по показнику середньої оцінки.
 const getBestStudent = function(students) {
     const studentsAverageMarks = students.map((item, index) => {
-        return getAverageMark(index); //создаем массив со средними оценками студентов
+        return getAverageMark(students[index]); //создаем массив со средними оценками студентов
     })
     const maxMark = Math.max(...studentsAverageMarks).toString(); //находим максимальную оценку
     const indexOfMaxMark = studentsAverageMarks.indexOf(maxMark); //получаем индекс максимальной оценки
