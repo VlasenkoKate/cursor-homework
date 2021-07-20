@@ -30,4 +30,4 @@ async function getRandomChinese(lenght) {
     console.log(`Рандомный текст из ${lenght} значений: ${chineseText}`);
 
 }
-getRandomChinese(5)
+getRandomChinese(10)
