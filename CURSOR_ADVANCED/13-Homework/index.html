@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>13 Homework
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+        <div class="characters">
+
+
+            <button id="getCharacters" class="get_button button">Show characters</button>
+            <div id='characters_list'></div>
+        </div>
+
+        <select name="select" class="nav_button" id="choose_episode"> 
+                <option value="1">Episode 4</option>
+                <option value="2" selected>Episode 5</option>
+                <option value="3">Episode 6</option>
+                <option value="4">Episode 1</option>
+                <option value="5" selected>Episode 2</option>
+                <option value="6">Episode 3</option>
+              </select>
+
+        <div class="planets">
+            <button id="getPlanets" class="get_button button">Show planets</button>
+            <div class="nav_buttons">
+                <button id="prev" class="button nav_button">prev</button>
+                <button id="next" class="button nav_button">next</button>
+            </div>
+            <div id="planets_list"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
