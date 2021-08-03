@@ -10,8 +10,8 @@
 
 
 const getChineseSign = function() { //создаем функцию, которая генерирует дату в милисекундах
-    let sign = Date.now().toString().slice(-5) //получаем 5 последних чисел от сгенерированного числа
-    let chineseSign = String.fromCharCode(sign) //переводим числа в символ
+    const sign = Date.now().toString().slice(-5) //получаем 5 последних чисел от сгенерированного числа
+    const chineseSign = String.fromCharCode(sign) //переводим числа в символ
     return chineseSign;
 }
 
@@ -21,7 +21,7 @@ async function getRandomChinese(lenght) {
 
     for (let i = 0; i < lenght; i++) { //запускаем цикл на lenght итераций
 
-        let getSign = new Promise(function(resolve, reject) {
+        const getSign = new Promise(function(resolve, reject) {
             setTimeout(() => resolve(getChineseSign()), 50) // задаем таймаут запуска функции, которая генерирует значения
         })
 

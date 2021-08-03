@@ -41,7 +41,7 @@ function getCharactersList() {
                         charactersData.gender = "♀"
                     }
                     const img = document.createElement("img")
-                    img.src = "./img/" + charactersData.name + ".png"
+                    img.src = "./assets/img/" + charactersData.name + ".png"
                     console.log(img.src)
 
                     charactersList.insertAdjacentHTML("beforeend", `<br><br><br>Full Name: ${charactersData.name} <br>

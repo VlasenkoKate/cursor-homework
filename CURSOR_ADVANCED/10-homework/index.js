@@ -6,9 +6,9 @@ const audio = document.querySelectorAll("audio")
 keys.addEventListener('click', e => {
     removeClass()
     audio.forEach(sound => {
-        if (sound.className == e.target.id) {
+        if (sound.className === e.target.id) {
             buttons.forEach(button => {
-                if (button.id == e.target.id) {
+                if (button.id === e.target.id) {
                     button.classList.add("sound")
                 }
             })
@@ -23,7 +23,7 @@ keys.addEventListener('click', e => {
 document.addEventListener('keyup', function(e) {
     removeClass()
     audio.forEach(sound => {
-        if (sound.className == e.code) {
+        if (sound.className === e.code) {
             buttons.forEach(button => {
                 if (button.id == e.code) {
                     button.classList.add("sound")
